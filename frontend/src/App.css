@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  background: #000;
+  height: 100vh;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 2rem 2rem;
+}
+
+.thermometer .thermometer__draw-b:after {
+  background-color: #5ec50a;
+}
+.thermometer .thermometer__bg-color {
+  background: linear-gradient(#0672ca, #bb3b00, #5ec50a);
+}
+.thermometer--theme-dark .thermometer__draw-a,
+.thermometer--theme-dark .thermometer__draw-a:before,
+.thermometer--theme-dark .thermometer__draw-a:after {
+  background-color: rgb(43, 41, 41);
+}
+.main {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.tempSpan {
+  padding-left: 1rem;
+}
+.main__info {
+  margin: 2rem;
+}
+
+.btn__off {
+  padding: 1rem 3rem;
+  margin: 1rem;
+  border-radius: 3rem;
+  background: red;
+  outline: none;
+  border: none;
+  color: white;
+}
+
+.btn__on {
+  padding: 1rem 3rem;
+  margin: 1rem;
+  border-radius: 3rem;
+  background: green;
+  outline: none;
+  border: none;
+  color: white;
+}
+
+#app-cover {
+  display: table;
+  counter-reset: button-counter;
+}
+
+.row {
+  display: table-row;
+}
+
+.toggle-button-cover {
+  display: table-cell;
+  position: relative;
+  width: 200px;
+  height: 140px;
+  box-sizing: border-box;
+}
+
+.button-cover,
+.knobs,
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.button {
+  position: relative;
+  top: 50%;
+  width: 74px;
+  height: 36px;
+  margin: -20px auto 0 auto;
+  overflow: hidden;
+}
+
+.button.r,
+.button.r .layer {
+  border-radius: 100px;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  background-color: #dbf1fa;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+/* Button 8 */
+#button-8 .knobs:before,
+#button-8 .knobs:after,
+#button-8 .knobs span {
+  position: absolute;
+  top: 4px;
+  width: 20px;
+  height: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  border-radius: 50%;
+  transition: 0.3s ease all;
+}
+
+#button-8 .knobs:before {
+  content: "ON";
+  color: #fff;
+  right: 42px;
+}
+
+#button-8 .knobs:after {
+  content: "OFF";
+  left: 42px;
+  color: #fff;
+  background-color: #f44336;
+  opacity: 0;
+}
+
+#button-8 .knobs:before,
+#button-8 .knobs:after {
+  z-index: 2;
+}
+
+#button-8 .knobs span {
+  right: 44px;
+  top: 6px;
+  padding: 12px;
+  background-color: #03a9f4;
+  z-index: 1;
+}
+
+#button-8 .checkbox:checked + .knobs:before {
+  opacity: 0;
+}
+
+#button-8 .checkbox:checked + .knobs:after {
+  opacity: 1;
+}
+
+#button-8 .checkbox:checked + .knobs span {
+  background-color: #fcebeb;
+  transform: scale(4);
+}
+
+
+.alert__sent {
+  background: #bb3b00;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+}
